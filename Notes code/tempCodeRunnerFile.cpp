@@ -1,1 +1,1 @@
-sb obj(10);
+ child obj;

@@ -15,6 +15,9 @@ class sb{
     cout<<a<<endl;
     cout<<b<<endl;
   }
+  void incre(){
+    a++;
+  }
 
 };
 

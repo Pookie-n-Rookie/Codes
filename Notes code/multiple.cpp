@@ -14,7 +14,7 @@ public:
 base2(int x=0):b2(x){}
 void show(){
   cout<<b2<<endl;
-}
+  }
 };
 class child:public base1,public base2{
   int c;

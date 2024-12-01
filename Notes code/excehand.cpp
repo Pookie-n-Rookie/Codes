@@ -22,38 +22,38 @@ using namespace std;
 // }
 // }
 
-// class num{
-//   int m;
-//   public:
-//   num(int k):m(k){
-//     cout<<"const";
-//   }
-//   void show(){
-//     cout<<"m="<<m<<endl;
-//   }
-//   void operator--();
-// };
-// void num::operator--(){
-//   if(m==0) throw *this;
-//   else --m;
+class num{
+  int m;
+  public:
+  num(int k):m(k){
+    cout<<"const";
+  }
+  void show(){
+    cout<<"m="<<m<<endl;
+  }
+  void operator--();
+};
+void num::operator--(){
+  if(m==0) throw *this;
+  else --m;
 
-// }
+}
 
-// int main(){
-//     try{
-//       num ob(4);
-//       cout<<"before desc";
-//       ob.show();
-//       while(1){
-//         cout<<"After desc";
-//         --ob;
-//         ob.show();
-//       }
-//   }
-//   catch(num t){
-//     cout<<"reached 0"<<endl;
-//   }
-// }
+int main(){
+    try{
+      num ob(4);
+      cout<<"before desc";
+      ob.show();
+      while(1){
+        cout<<"After desc";
+        --ob;
+        ob.show();
+      }
+  }
+  catch(num t){
+    cout<<"reached 0"<<endl;
+  }
+}
 
 // class sqrtt{
 //   public:

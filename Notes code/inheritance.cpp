@@ -30,8 +30,8 @@ void show(){
 
 int main() {
 B obj;
-obj.set_b();
-// obj.set_a(10);
+obj.set_b(20);
+obj.set_a(10);
 obj.show();
 
 

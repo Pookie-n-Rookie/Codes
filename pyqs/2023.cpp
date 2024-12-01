@@ -115,34 +115,34 @@ using namespace std;
 //   delete ptr;
 // }
 
-// namespace ns1{
+namespace ns1{
 
-//   int a,b;
-//   void f(int x,int y){
-//     a+=++x;
-//     b+=y++;
-//     cout<<a<<endl<<b;
-//   }
-//   namespace ns2{
-//     int x,y;
-//     void g(){
-//       a+=++x;
-//       b+=--y;
-//       cout<<a<<endl<<b;
-//       cout<<x<<endl<<y;
-//     }
-//   }
-// }
+  int a,b;
+  void f(int x,int y){
+    a+=++x;
+    b+=y++;
+    cout<<a<<endl<<b<<endl;
+  }
+  namespace ns2{
+    int x,y;
+    void g(){
+      a+=++x;
+      b+=--y;
+      cout<<a<<endl<<b<<endl;
+      cout<<x<<endl<<y<<endl;
+    }
+  }
+}
 
-// int main(){
-//     using namespace ns1;
-//     a=10,b=20;
-//     f(10,20);
-//     using ns2::x;
-//     using ns2::y;
-//     x=5,y=6;
-//     ns2::g();
-// }
+int main(){
+    using namespace ns1;
+    a=10,b=20;
+    f(10,20);
+    using ns2::x;
+    using ns2::y;
+    x=5,y=6;
+    ns2::g();
+}
 // template <class T = int, int N = 5>
 // void print(T a) {
 //     for (int i = 0; i < N; i++)
@@ -160,25 +160,25 @@ using namespace std;
 //   print<char,4>(97);//
 //   print<>(98);//
 // }
-namespace ns1{
-  int a;
-  void show();
-  namespace ns2{
-    int a;
-    void show();
-  }
-}
-void ns1::show(){
-  cout<<a<<endl;
-}
-void ns1::ns2::show(){
-  cout<<ns2::a<<endl;
-}
+// namespace ns1{
+//   int a;
+//   void show();
+//   namespace ns2{
+//     int a;
+//     void show();
+//   }
+// }
+// void ns1::show(){
+//   cout<<a<<endl;
+// }
+// void ns1::ns2::show(){
+//   cout<<ns2::a<<endl;
+// }
 
-int main(){
-  using namespace ns1;
-  a=10;
-  show();
-  ns2::a=20;
-  ns2::show();
-}
+// int main(){
+//   using namespace ns1;
+//   a=10;
+//   show();
+//   ns2::a=20;
+//   ns2::show();
+// }
