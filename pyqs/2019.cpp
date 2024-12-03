@@ -6,19 +6,19 @@ using namespace std;
 // public:
 //     ab(int x =0) : a(x) {}
 
-//     ab operator+(ab &obj) {
-//         ab t;
-//         t.a = a + obj.a;
-//         return t;
-//     }
+// //     ab operator+(ab &obj) {
+// //         ab t;
+// //         t.a = a + obj.a;
+// //         return t;
+// //     }
 
 //     ab operator++() {
 //       return ab(++a);
 //     }
 
-//     ab operator+(int x) {
-//         return ab(a+x);
-//     }
+// //     ab operator+(int x) {
+// //         return ab(a+x);
+// //     }
 
 //     operator int() {
 //         return a;
@@ -91,8 +91,13 @@ using namespace std;
 //     return 0;
 // }
 
-// #include <iostream>---->wrong
+// #include <iostream>
 // using namespace std;
+// void* operator new(size_t sz,char k){
+//       void *ptr=malloc(sz);
+//        ((char*)ptr)[0]='$';
+//        return ptr;
+//        }
 
 // class Array {
 //     char *arr;
@@ -106,11 +111,7 @@ using namespace std;
 //         }
 //     }
 
-//     void* operator new(size_t size) {
-//         void* ptr = ::operator new(size);
-//         static_cast<Array*>(ptr)->ch = '$';
-//         return ptr;
-//     }
+  
 
 //     char& operator[](int index) {
 //         return arr[index];
@@ -123,7 +124,7 @@ using namespace std;
 //         cout << endl;
 //     }
 
-//     void show() const {
+//     void show()  {
 //         cout << "Character ch: " << ch << endl;
 //     }
 

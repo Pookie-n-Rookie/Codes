@@ -12,17 +12,10 @@ using namespace std;
 //     return *this;
 //   }
 //   ab operator++(int){
-//     ab t;
-//     t=*this;
-//     (this->a)++;
-//     return t;
+//     return ab(a++);
 //   }
 //    ab operator++(){
-//     ab t;
-//     (this->a)++;
-//     t=*this;
-    
-//     return t;
+//    return ab(++a);
 //   }
 //  operator int(){
 //   return a;
@@ -42,34 +35,26 @@ using namespace std;
 // class A {
 //     int x;
 // public:
-//     A(int z = 1) : x(z) {}
+//     A(int z = 0) : x(z) {}
     
 //     operator int() {
 //         return x;
 //     }
     
-//     void operator*=(const A& obj) {
+//     void operator*=(const A obj) {
 //         x *= obj.x;
 //     }
-    
-//     A operator+(int val)  {  // Define operator+ for A + int
-//         return A(x + val);
-//     }
-    
-//     A* operator->() {
-//         return this;
-//     }
-    
+
 //     void display() {
-//         cout << x << endl;
+//         cout << "a="<<x<< endl;
 //     }
     
-//     int get_x()  {
-//         return x;
-//     }
     
-//     bool operator==( A& obj)  {  // Define operator== for A comparison
+//     bool operator==( A& obj)  {  
 //         return x == obj.x;
+//     }
+//     int get_x(){
+//       return x;
 //     }
 // };
 
@@ -87,21 +72,20 @@ using namespace std;
 //     }
     
 //     B operator()(int x) {
-//         y = x;
+//         y += x;
 //         return *this;
 //     }
-//     B( A& obj) {  // Constructor to convert A to B
-//         y = obj.get_x();
+//     B (A &obj){
+//       y=obj.get_x();
+
 //     }
-//     // void operator=(A& obj) {
-//     //     y = obj.get_x();
-//     // }
 // };
 
 
 // int main(){
-//   A oba1(5),oba2;
+//   A oba1(23),oba2;
 //   oba2*=oba1+10;
+//   oba1.display();
 //   B obb1=oba2;
 //   obb1->show();
 //   B obb2=obb1(10);
@@ -115,7 +99,7 @@ using namespace std;
 //   delete ptr;
 // }
 
-<<<<<<< HEAD
+
 namespace ns1{
 
   int a,b;
@@ -144,7 +128,6 @@ int main(){
     x=5,y=6;
     ns2::g();
 }
-=======
 // namespace ns1{
 
 //   int a,b;
@@ -173,7 +156,7 @@ int main(){
 //     x=5,y=6;
 //     ns2::g();
 // }
->>>>>>> b5fdc8920272ed6ca67f2c480d51f2d09e9e8ac5
+
 // template <class T = int, int N = 5>
 // void print(T a) {
 //     for (int i = 0; i < N; i++)
@@ -191,7 +174,7 @@ int main(){
 //   print<char,4>(97);//
 //   print<>(98);//
 // }
-<<<<<<< HEAD
+
 // namespace ns1{
 //   int a;
 //   void show();
@@ -214,27 +197,27 @@ int main(){
 //   ns2::a=20;
 //   ns2::show();
 // }
-=======
-namespace ns1{
-  int a;
-  void show();
-  namespace ns2{
-    int a;
-    void show();
-  }
-}
-void ns1::show(){
-  cout<<a<<endl;
-}
-void ns1::ns2::show(){
-  cout<<ns2::a<<endl;
-}
 
-int main(){
-  using namespace ns1;
-  a=10;
-  show();
-  ns2::a=20;
-  ns2::show();
-}
->>>>>>> b5fdc8920272ed6ca67f2c480d51f2d09e9e8ac5
+// namespace ns1{
+//   int a;
+//   void show();
+//   namespace ns2{
+//     int a;
+//     void show();
+//   }
+// }
+// void ns1::show(){
+//   cout<<a<<endl;
+// }
+// void ns1::ns2::show(){
+//   cout<<ns2::a<<endl;
+// }
+
+// int main(){
+//   using namespace ns1;
+//   a=10;
+//   show();
+//   ns2::a=20;
+//   ns2::show();
+// }
+

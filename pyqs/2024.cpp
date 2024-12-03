@@ -12,24 +12,12 @@ using namespace std;
 //   operator int(){
 //     return s;
 //   }
-//   st operator*(st &ob){
-//     st j;
-//     j.s=s*ob.s;
-//     return j;
-//   }
-//   st operator+(int z){
-//     st j;
-//     j.s=s+z;
-//     return j;
-//   }
+
+
 //   st operator++(){
 //     return st(++s);
 //   }
-//  friend st operator-(int x,st &obj){
-//     st j;
-//     j.s=x-obj.s;
-//     return j;
-//   }
+
 
 // };
 
@@ -39,10 +27,10 @@ using namespace std;
 //   cout<<ob1<<" "<<ob3<<endl;
 //   ob3=ob1*(ob2+5);
 //   cout<<ob1<<" "<<ob3<<endl;
-//   ob2=50-(++ob3)*ob1;
+//   ob2=50 +(ob3-4)-(++ob3)*ob1;
 //   cout<<ob1<<" "<<ob2<<" "<<ob3<<endl;
-
 // }
+
 // class B;
 // class A{
 //   int a;
@@ -73,8 +61,8 @@ using namespace std;
 //   operator int(){
 //     return b; 
 //   }
-//   B &operator()(int x){
-//     (this->b)=x;
+//   B operator()(int x){
+//     b=x;
 //     return *this;
 // }
 //   B operator-(int x){
@@ -137,25 +125,90 @@ using namespace std;
 //   cin>>n1;
 //   cout<<n1;
 // }
+// namespace ns1{
+//   void display();
+//   class nss1{
+//     public:
+//     void display();
+//   };
+// }
+
+// void ns1::display(){
+//   cout<<"ns1 hi"<<endl;
+
+// }
+// void ns1::nss1::display(){
+//   cout<<" nsss1 wala";
+// }
+
+// int main(){
+//   using namespace ns1;
+//   display();
+//   nss1 obj;
+//   obj.display();
+// }
+
+// class smp{
+//   int s;
+//   public:
+//   smp(int z=0):s(z){}
+//   operator int(){
+//     return s;
+//   }
+//   smp operator /=(int x){
+//     s/=x;
+//     return *this;
+//   }
+//   smp operator ++(){
+//     return smp(++s);
+//   }
+
+// };
+
+// int main(){
+//    smp ob1(4),ob2(5),ob3;
+//    ob3=ob1/=2;
+//    cout<<ob1<<" "<<ob2<<" "<<ob3<<endl;
+//    ob3=ob1*(ob2+5);
+//    cout<<ob1<<" "<<ob2<<" "<<ob3<<endl;
+//     ob2=50 -(++ob3)*ob1;
+//    cout<<ob1<<" "<<ob2<<" "<<ob3;
+
+// }
 namespace ns1{
-  void display();
-  class nss1{
-    public:
-    void display();
-  };
+int a,b;
+void set (int x, int y)
+{a=x+y; 
+ b=y-x;
+}
+void show(){
+cout<<a<<" "<<b<<endl;
 }
 
-void ns1::display(){
-  cout<<"ns1 hi"<<endl;
-
+namespace ns2{
+int a=5, b=2;
+void set (int x, int y)
+{a=y-x; 
+b=x+y;
 }
-void ns1::nss1::display(){
-  cout<<" nsss1 wala";
+void show(){
+cout<<a<<" "<<b<<endl;
+}
+}
 }
 
-int main(){
-  using namespace ns1;
-  display();
-  nss1 obj;
-  obj.display();
+int main()
+{
+    using namespace ns1;
+    a = 10;
+    b = 20;
+    ns2::show();
+    ns2::set(7, 10);
+    show();
+    set(8, 4);
+    ns2::show();
+    ns2::set(6, 8);
+    show();
+    set(2, 5);
+    ns2::show();
 }
