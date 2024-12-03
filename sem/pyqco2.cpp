@@ -126,49 +126,70 @@ using namespace std;
 //     ob[i].show();
 //   }
 // }
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-namespace ns1 {
-    int a, b;
+// namespace ns1 {
+//     int a, b;
 
-    void set(int x, int y) {
-        a = x + y;
-        b = y - x;
-    }
+//     void set(int x, int y) {
+//         a = x + y;
+//         b = y - x;
+//     }
 
-    void show() {
-        cout << a << " " << b << endl;
-    }
+//     void show() {
+//         cout << a << " " << b << endl;
+//     }
 
-    namespace ns2 {
-        int a = 5, b = 2;
+//     namespace ns2 {
+//         int a = 5, b = 2;
 
-        void set(int x, int y) {
-            a = y - x;
-            b = x + y;
-        }
+//         void set(int x, int y) {
+//             a = y - x;
+//             b = x + y;
+//         }
 
-        void show() {
-            cout << a << " " << b << endl;
-        }
-    }
+//         void show() {
+//             cout << a << " " << b << endl;
+//         }
+//     }
+// }
+
+// int main() {
+//     using namespace ns1;
+//     a = 10;
+//     b = 20;
+
+//     ns2::show();        // Output: 5 2
+//     ns2::set(7, 10);    // ns2::a = 3, ns2::b = 17
+//     show();             // Output: 10 20
+//     set(8, 4);          // ns1::a = 12, ns1::b = -4
+//     ns2::show();        // Output: 3 17
+//     ns2::set(6, 8);     // ns2::a = 2, ns2::b = 14
+//     show();             // Output: 12 -4
+//     set(2, 5);          // ns1::a = 7, ns1::b = 3
+//     ns2::show();        // Output: 2 14
+
+//     return 0;
+// }
+
+
+int &max(int &a,int &b){
+    return (a>b)?a:b;
+}
+void swap(int *a,int *b){
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+
 }
 
-int main() {
-    using namespace ns1;
-    a = 10;
-    b = 20;
-
-    ns2::show();        // Output: 5 2
-    ns2::set(7, 10);    // ns2::a = 3, ns2::b = 17
-    show();             // Output: 10 20
-    set(8, 4);          // ns1::a = 12, ns1::b = -4
-    ns2::show();        // Output: 3 17
-    ns2::set(6, 8);     // ns2::a = 2, ns2::b = 14
-    show();             // Output: 12 -4
-    set(2, 5);          // ns1::a = 7, ns1::b = 3
-    ns2::show();        // Output: 2 14
-
-    return 0;
+int main()
+{
+int a=4, b=6;
+max(a,b)=100;
+cout<<"a="<<a<<"b="<<b<<endl;
+swap(&a, &b);
+max(a,b)=100;
+cout<<"a="<<a<<"b="<<b<<endl;
 }

@@ -3,31 +3,31 @@
 #include <fstream>
 using namespace std;
 
-// bool palindrome(string s){
-//   int size=s.length();
-//   for(int i=0;i<=size/2;i++){
-//     if(s[i]!=s[size-i-1])return false;
-//   }
-//   return true;
-// }
-// int main() {
-//     fstream  f1,f3;
+bool palindrome(string s){
+  int size=s.length();
+  for(int i=0;i<=size/2;i++){
+    if(s[i]!=s[size-i-1])return false;
+  }
+  return true;
+}
+int main() {
+    fstream  f1,f3;
    
 
-//     f1.open("text.txt", ios::in);
-//     string c;
+    f1.open("text.txt", ios::in);
+    string c;
     
-//     f3.open("text3.txt", ios::app);
-//     while(f1>>c){
-//       if(c!=" "&&palindrome(c)){
-//         f3<<c<<endl;
-//       }
+    f3.open("text3.txt", ios::app);
+    while(f1>>c){
+      if(c!=" "&&palindrome(c)){
+        f3<<c<<endl;
+      }
     
-//     }
-//     f1.close();
-//     f3.close();
-//     return 0;
-// }
+    }
+    f1.close();
+    f3.close();
+    return 0;
+}
 
 bool atmosvowel(string s){
   int size=s.length();

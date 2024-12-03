@@ -155,24 +155,22 @@ using namespace std;
 
 // }
 
-// template<class t>
-// t cube( t x){
-//   t z=x*x*x;
-//   return z;
-// }
+template<class t>
+t cube( t x){
+  t z=x*x*x;
+  return z;
+}
 
-// template<>
-// string cube<string>(string s){
-//   return s+s+s;
-// }
+template<>
+char cube<char>(char s){
+  return s;
+}
 
-// int main(){
-//   cout<<cube(4)<<endl;
-//   cout<<cube(4.5)<<endl;
-//   string s ="JU";
-//   cout<<cube(s)<<endl;
+int main(){
 
-// }
+  cout<<cube('S')<<endl;
+
+}
 
 // class Base
 // {
@@ -310,24 +308,76 @@ using namespace std;
 // print<char,4>(97);
 // print<>(98);
 // }
+// }
 
-#include<iostream>
-using namespace std;
-template <class T>
-void square(T a){
-    cout<< a*a;
-}
-template<>
-void square<char>(char a){
-    if('A' <= a && a <= 'Z'){
-        cout<<(int)a;
-    }
-    else{
-        cout<< (char)(a - 32);
-    }
-}
+// #include<iostream>
+// using namespace std;
+// template <class T>
+// void square(T a){
+//     cout<< a*a;
+// }
+// template<>
+// void square<char>(char a){
+//     if('A' <= a && a <= 'Z'){
+//         cout<<(int)a;
+//     }
+//     else{
+//         cout<< (char)(a - 32);
+//     }
+// }
 
-int main(){
-    char a = 'Z';
-     square(a);
-}
+// int main(){
+//     char a = 'Z';
+//      square(a);
+// }
+
+//diamond prblm
+
+// class p{
+//     public:
+//     p(){
+//         cout<<"p const"<<endl;
+//     }
+//     void show(){
+//         cout<<"calling p"<<endl;
+//     }
+//     ~p(){
+//         cout<<"p destr"<<endl;
+//     }
+// };
+// class c1:virtual public p{
+//     public:
+//     c1(){
+//         cout<<"c1 const"<<endl;
+//     }
+//     ~c1(){
+//         cout<<"c1 destr"<<endl;
+//     }
+// };
+// class c2:virtual public p{
+//     public:
+//     c2(){
+//         cout<<"c2 const"<<endl;
+//     }
+//     ~c2(){
+//         cout<<"c2 destr"<<endl;
+//     }
+// };
+
+// class gc:public c1,public c2{
+//     public:
+//     gc()
+//     {cout<<"gc const"<<endl;
+//     }
+//    ~gc()
+//     {cout<<"gc destr"<<endl;
+//     }
+
+
+// };
+
+// int main(){
+//     gc ob;
+//     ob.show();
+// }
+
