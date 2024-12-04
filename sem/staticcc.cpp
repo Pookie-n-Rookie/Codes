@@ -7,13 +7,14 @@ class ab{
   public:
   ab(int z=0){
     x=z;
-    y+=2;
+    y=z;
   }
   static void f1(){
-     ab::f2(); // 1st method
-     f2();// 2nd method
-    //  ab ob;
-    //  ob.f4();
+     ab::f2();
+     f2();
+     ab obj;
+     obj.f3();
+   
 
   }
 
@@ -21,11 +22,11 @@ class ab{
     cout<<y<<endl;
   }
   void f3(){
-    //if  static call from non static
-    f2();// 1st method
-    f4();// 2nd method
-    this->f2();// 3rd method
-    ab::f2();// 4th method
+   
+    f2();
+    f4();
+    this->f2();
+    ab::f2();
   }
   void f4(){
     cout<<x<<" "<<y<<endl;
