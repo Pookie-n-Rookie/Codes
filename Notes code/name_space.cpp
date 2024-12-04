@@ -23,7 +23,7 @@ int main(){
 // using namespace ns1;
 // cout<<a+b<<endl;
 // ns2::f();
-namespace ns3=ns1;
+namespace ns3   =ns1;
 cout<<ns3::a<<endl;
 cout<<ns3::b;
 cout<<ns1::a;

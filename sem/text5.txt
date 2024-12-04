@@ -2,7 +2,3 @@ abbbbb
 cbbbbbb
 zbbbbb
 efffff
-abbbbb
-cbbbbbb
-zbbbbb
-efffff

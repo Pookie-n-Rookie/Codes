@@ -22,7 +22,7 @@ T Sample<T>:: incr()
 }
 
 template <>
-char Sample<char>::convert() //Instead of writing entire class template, just define the convert function for char                                                //separately outside the class. 
+char Sample<char>::convert()                                              
 {  
     elem=elem-32;
     return elem;
